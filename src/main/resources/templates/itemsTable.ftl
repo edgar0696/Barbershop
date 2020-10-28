@@ -15,7 +15,6 @@
 
 <br>
 <div>
-
     <table class="table table-dark">
         <thead>
         <tr>
@@ -49,5 +48,9 @@
     </table>
 
 </div>
+
+<a href="/web/item/create">Create</a>
+
+
 </body>
 </html>
