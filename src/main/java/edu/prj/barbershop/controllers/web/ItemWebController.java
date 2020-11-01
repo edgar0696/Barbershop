@@ -4,6 +4,7 @@ import edu.prj.barbershop.data.FakeData;
 import edu.prj.barbershop.form.ItemForm;
 import edu.prj.barbershop.model.Item;
 import edu.prj.barbershop.service.item.impls.ItemServiceImpl;
+import edu.prj.barbershop.service.item.interfaces.CrudItemMongoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +23,7 @@ import java.util.stream.Stream;
 public class ItemWebController {
 
     @Autowired
-    ItemServiceImpl service;
+    CrudItemMongoImpl service;
 
     @RequestMapping("/all")
     String getAll(Model model) {
