@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Barbershop</title>
+    <link rel="stylesheet" type="text/css" href="interfaceStyle/style.css">
 </head>
 <body>
-<h1>Hello World</h1>
-<h2>This is Barbershop</h2>
-<a href="/api/item/get/all">Rest API items</a><br>
-<a href="/web/item/all" style="color: brown">Table item</a><br>
-<a href="/api/client/list" style="color: green">Rest API Client</a><br>
-<a href="/web/client/list" style="color: deeppink">TABLE Client</a>
+
+<header>
+    <div class="container">
+        <div class="header">
+            <h1>Hello World</h1>
+            <h2>This is Barbershop</h2>
+            <button class="butt1" onclick="window.location.href = '/api/item/get/all'">Rest API items</button>
+            <br>
+            <button class="butt1" onclick="window.location.href = '/web/item/all'">Table item</button>
+            <br>
+            <button class="butt1" onclick="window.location.href = '/api/client/list'">Rest API Client</button>
+            <br>
+            <button class="butt1" onclick="window.location.href = '/web/client/list'">TABLE Client</button>
+        </div>
+    </div>
+</header>
+
 </body>
 </html>
