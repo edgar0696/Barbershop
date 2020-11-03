@@ -7,21 +7,33 @@
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <div class="header">
-            <h1>Hello World</h1>
-            <h2>This is Barbershop</h2>
-            <div class="knopka restapiitems"><button class="butt1" onclick="window.location.href = '/api/item/get/all'">Rest API items</button></div>
+<div class="container">
+    <divhead class="header">
+        <h1>Hello World</h1>
+        <h2>This is Barbershop</h2>
+
+            <div class="knopkablock">
+                <div class="knopka restapiitems">
+                    <button class="butt1" onclick="window.location.href = '/api/item/get/all'">Rest API items</button>
+                </div>
+                <br>
+                <div class="knopka tableitems">
+                    <button class="butt1" onclick="window.location.href = '/web/item/all'">Table item</button>
+                </div>
+            </div>
             <br>
-            <div class="knopka tableitems"><button class="butt1" onclick="window.location.href = '/web/item/all'">Table item</button></div>
-            <br>
-            <div class="knopka restapiclient"><button class="butt1" onclick="window.location.href = '/api/client/list'">Rest API Client</button></div>
-            <br>
-            <div class="knopka tableclient"><button class="butt1" onclick="window.location.href = '/web/client/list'">TABLE Client</button></div>
-        </div>
-    </div>
-</header>
+            <div class="knopkablock">
+                <div class="knopka restapiclient">
+                    <button class="butt1" onclick="window.location.href = '/api/client/list'">Rest API Client</button>
+                </div>
+                <br>
+                <div class="knopka tableclient">
+                    <button class="butt1" onclick="window.location.href = '/web/client/list'">TABLE Client</button>
+                </div>
+            </div>
+
+    </divhead>
+</div>
 
 </body>
 </html>
