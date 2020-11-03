@@ -7,9 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 @Service
-public class ClientServiceImpl implements ICrudClient {
+public class CrudClientIServiseFakempl implements ICrudClient {
 
     @Autowired
     FakeData data;
@@ -21,7 +20,7 @@ public class ClientServiceImpl implements ICrudClient {
 
     @Override
     public Client get(String id) {
-        return this.getAll().stream().filter(client1 -> client1.getId().equals(id)).findFirst().orElse(null);
+        return null;
     }
 
     @Override
@@ -31,9 +30,7 @@ public class ClientServiceImpl implements ICrudClient {
 
     @Override
     public Client delete(String id) {
-        Client client = this.get(id);
-        this.getAll().remove(client);
-        return client;
+        return null;
     }
 
     @Override
@@ -41,6 +38,3 @@ public class ClientServiceImpl implements ICrudClient {
         return data.getClients();
     }
 }
-
-
-

@@ -21,7 +21,6 @@ public class ItemRestController {
     ItemServiceImpl service;
 
     @RequestMapping("/get/all")
-
     List<Item> getAll() {
         return service.getAll();
     }
