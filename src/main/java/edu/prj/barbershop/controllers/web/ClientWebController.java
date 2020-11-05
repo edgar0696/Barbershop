@@ -4,6 +4,7 @@ import edu.prj.barbershop.form.ItemForm;
 import edu.prj.barbershop.model.Client;
 import edu.prj.barbershop.model.Item;
 import edu.prj.barbershop.service.client.impls.CrudClientIServiseFakempl;
+import edu.prj.barbershop.service.client.impls.CrudClientServiceMongoImpl;
 import edu.prj.barbershop.service.item.impls.ItemServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class ClientWebController {
 
     @Autowired
-    CrudClientIServiseFakempl service;
+    CrudClientServiceMongoImpl service;
 
     @RequestMapping("/list")
     String getAll(Model model) {

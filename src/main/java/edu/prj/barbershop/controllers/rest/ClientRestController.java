@@ -3,6 +3,7 @@ package edu.prj.barbershop.controllers.rest;
 import edu.prj.barbershop.model.Client;
 import edu.prj.barbershop.model.Item;
 import edu.prj.barbershop.service.client.impls.CrudClientIServiseFakempl;
+import edu.prj.barbershop.service.client.impls.CrudClientServiceMongoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,8 +12,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/client")
 public class ClientRestController {
+
    @Autowired
-   CrudClientIServiseFakempl service;
+   CrudClientServiceMongoImpl service;
 
     @RequestMapping("/list")
     List<Client> getClients(){
