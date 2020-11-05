@@ -1,13 +1,12 @@
 package edu.prj.barbershop.controllers.rest;
 
 import edu.prj.barbershop.data.FakeData;
+import edu.prj.barbershop.model.Client;
 import edu.prj.barbershop.model.Item;
+import edu.prj.barbershop.service.item.impls.CrudItemMongoImpl;
 import edu.prj.barbershop.service.item.impls.ItemServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -18,7 +17,7 @@ import java.util.stream.Stream;
 @RequestMapping("/api/item")
 public class ItemRestController {
     @Autowired
-    ItemServiceImpl service;
+    CrudItemMongoImpl service;
 
     @RequestMapping("/get/all")
     List<Item> getAll() {
@@ -38,8 +37,13 @@ public class ItemRestController {
         return service.get(id);
     }
 
-    @RequestMapping("/create")
+    @PostMapping("/create")
     Item create(@RequestParam Item item) {
         return service.create(item);
+    }
+
+    @PutMapping("/update")
+    Item update(@RequestParam Item item) {
+        return service.update(item);
     }
 }

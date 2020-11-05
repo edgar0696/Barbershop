@@ -4,10 +4,7 @@ import edu.prj.barbershop.model.Client;
 import edu.prj.barbershop.model.Item;
 import edu.prj.barbershop.service.client.impls.CrudClientIServiseFakempl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,8 +32,13 @@ public class ClientRestController {
         return service.get(id);
     }
 
-    @RequestMapping("/create")
+    @PutMapping("/create")
     Client create(@RequestParam Client client) {
         return service.create(client);
+    }
+
+    @PutMapping("/update")
+    Client update(@RequestParam Client client) {
+        return service.update(client);
     }
 }
