@@ -13,11 +13,11 @@ import java.util.stream.Stream;
 @Repository
 public class FakeData {
     List<Item> items = Stream.of(
-            new Item(null, "Coca-Cola", "Drink",
+            new Item("1", "Coca-Cola", "Drink",
                     LocalDateTime.now(), LocalDateTime.now()),
-            new Item(null, "Pepsi", "Drink",
+            new Item("2", "Pepsi", "Drink",
                     LocalDateTime.now(), LocalDateTime.now()),
-            new Item(null, "Fanta", "Drink",
+            new Item("3", "Fanta", "Drink",
                     LocalDateTime.now(), LocalDateTime.now())
     ).collect(Collectors.toList());
 

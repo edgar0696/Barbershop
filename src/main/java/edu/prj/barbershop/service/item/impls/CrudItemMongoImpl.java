@@ -22,7 +22,7 @@ public class CrudItemMongoImpl implements ICrudItem {
 
     private List<Item> list = new ArrayList<>();
 
-   // @PostConstruct
+    @PostConstruct
     void init(){
         list = data.getItems();
         System.out.println(list);
