@@ -23,7 +23,7 @@ public class CrudClientServiceMongoImpl implements ICrudClient {
 
     private List<Client> list = new ArrayList<>();
 
-    @PostConstruct
+   // @PostConstruct
     void init(){
         list = data.getClients();
         repository.saveAll(list);

@@ -38,4 +38,12 @@ public class ClientWebController {
         //crud CRUD -> create read update delete
     }
 
+    @RequestMapping(value = "/create", method = RequestMethod.GET)
+    public String create(Model model){
+        ItemForm itemForm = new ItemForm();
+        model.addAttribute("form" , itemForm);
+
+        return "ItemAddForm";
+    }
+
 }
