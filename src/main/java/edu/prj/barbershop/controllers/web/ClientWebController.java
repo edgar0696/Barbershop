@@ -73,6 +73,8 @@ public class ClientWebController {
         client.setName(form.getName());
         client.setDescription(form.getDescription());
         client.setPhone(form.getPhone());
+        client.setPhone(form.getAdress());
+        client.setPhone(form.getDateOfBirthday());
         service.create(client);
         return "redirect:/web/client/list";
     }

@@ -24,6 +24,8 @@
             <th>Adress</th>
             <th>Birthday</th>
             <th>Description</th>
+            <th>Delete</th>
+            <th>Edit</th>
         </tr>
         </thead>
         <tbody>

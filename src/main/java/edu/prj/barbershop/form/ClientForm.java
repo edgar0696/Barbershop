@@ -5,7 +5,28 @@ public class ClientForm {
     private String name = "";
     private String description = "";
     private String phone = "";
+    private String adress = "";
+    private String dateOfBirthday = "";
     private String created_at = "";
+
+    public ClientForm(String id, String name, String description, String phone, String adress, String dateOfBirthday, String created_at, String modified_at) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.phone = phone;
+        this.adress = adress;
+        this.dateOfBirthday = dateOfBirthday;
+        this.created_at = created_at;
+        this.modified_at = modified_at;
+    }
+
+    public String getDateOfBirthday() {
+        return dateOfBirthday;
+    }
+
+    public void setDateOfBirthday(String dateOfBirthday) {
+        this.dateOfBirthday = dateOfBirthday;
+    }
 
     public ClientForm(String id, String name, String description, String phone, String created_at, String modified_at) {
         this.id = id;
@@ -14,6 +35,24 @@ public class ClientForm {
         this.phone = phone;
         this.created_at = created_at;
         this.modified_at = modified_at;
+    }
+
+    public ClientForm(String id, String name, String description, String phone, String adress, String created_at, String modified_at) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.phone = phone;
+        this.adress = adress;
+        this.created_at = created_at;
+        this.modified_at = modified_at;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
     }
 
     public String getPhone() {
@@ -88,5 +127,6 @@ public class ClientForm {
 
     public ClientForm() {
     }
+
 
 }
