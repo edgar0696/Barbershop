@@ -47,6 +47,8 @@
 
     </table>
 
+    <a href="/web/client/create" class="btn btn-success">Create</a>
+
 </div>
 </body>
 </html>
