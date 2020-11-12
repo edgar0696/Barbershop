@@ -15,6 +15,8 @@
         <form name="item" action="" method="POST">
             Name:<@spring.formInput "form.name" "" "text"/>
             <br>
+            Phone:<@spring.formInput "form.phone" "" "text"/>
+            <br>
             Description:<@spring.formInput "form.description" "" "text"/>
             <br>
             <input type="submit" value="Create"/>

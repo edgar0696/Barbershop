@@ -4,7 +4,25 @@ public class ClientForm {
     private String id = "";
     private String name = "";
     private String description = "";
+    private String phone = "";
     private String created_at = "";
+
+    public ClientForm(String id, String name, String description, String phone, String created_at, String modified_at) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.phone = phone;
+        this.created_at = created_at;
+        this.modified_at = modified_at;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public String getCreated_at() {
         return created_at;
@@ -70,4 +88,5 @@ public class ClientForm {
 
     public ClientForm() {
     }
+
 }

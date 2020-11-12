@@ -82,4 +82,10 @@ public class ItemWebController {
         service.update(item);
         return "redirect:/web/item/all";
     }
+
+    @RequestMapping(value = "/all/sort",method = RequestMethod.GET)
+    public String sortedByName(Model model) {
+        model.addAttribute("items", service.getAllSortedByName());
+        return "itemsTable";
+    }
 }
