@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Controller
 @RequestMapping("web/client")
 public class ClientWebController {
@@ -41,24 +44,6 @@ public class ClientWebController {
         /*        clients.remove(client);*/
         return "redirect:/web/client/list";
     }
-    @RequestMapping("/edit/{id}")
-    String editById(@PathVariable("id") String id, Model model){
-        Client client = service.get(id);
-        ClientForm form = new ClientForm();
-        form.setName(client.getName());
-        form.setDescription(client.getDescription());
-        model.addAttribute("form", form);
-        return "ClientAddForm";
-    }
-
-    @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
-    String editById(@ModelAttribute("form") ClientForm form, @PathVariable("id") String id, Model model){
-        Client client = service.get(id);
-        client.setName(form.getName());
-        client.setDescription(form.getDescription());
-        service.update(client);
-        return "redirect:/web/client/list";
-    }
 
     @RequestMapping(value = "/create", method = RequestMethod.GET)
     public String create(Model model) {
@@ -73,9 +58,50 @@ public class ClientWebController {
         client.setName(form.getName());
         client.setDescription(form.getDescription());
         client.setPhone(form.getPhone());
-        client.setPhone(form.getAdress());
-        client.setPhone(form.getDateOfBirthday());
+        client.setAdress(form.getAdress());
+        String birthdayAsString = form.getDateOfBirthday();
+        //    client.setDateOfBirthday(form.getDateOfBirthday());
+        LocalDate birthdayAsDate = LocalDate.parse(birthdayAsString);
+        client.setDateOfBirthday(birthdayAsDate);
         service.create(client);
+        return "redirect:/web/client/list";
+    }
+
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
+    public String update(@PathVariable("id") String id, Model model){
+        Client client = service.get(id);
+        ClientForm clientForm = new ClientForm();
+        clientForm.setId(client.getId());
+        clientForm.setName(client.getName());
+        clientForm.setAdress(client.getAdress());
+        clientForm.setPhone(client.getPhone());
+        clientForm.setDateOfBirthday(client.getDateOfBirthday().toString());
+        clientForm.setDescription(client.getDescription());
+        model.addAttribute("form", clientForm);
+        /*Client client = service.get(id);
+        ClientForm form = new ClientForm();
+        form.setName(client.getName());
+        form.setDescription(client.getDescription());
+        model.addAttribute("form", form);*/
+        return "updateClient";
+    }
+
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
+    public String update(@ModelAttribute("form") ClientForm form, @PathVariable("id") String id, Model model){
+        Client client = service.get(id);
+        client.setName(form.getName());
+        client.setAdress(form.getAdress());
+        client.setPhone(form.getPhone());
+        String birthdayAsString = form.getDateOfBirthday();
+//        client.setDateOfBirthday(clientForm.getDateOfBirthday());
+        LocalDate birthdayAsDate = LocalDate.parse(birthdayAsString);
+        client.setDateOfBirthday(birthdayAsDate);
+        client.setDescription(client.getDescription());
+        service.update(client);
+        /*Client client = service.get(id);
+        client.setName(form.getName());
+        client.setDescription(form.getDescription());
+        service.update(client);*/
         return "redirect:/web/client/list";
     }
 

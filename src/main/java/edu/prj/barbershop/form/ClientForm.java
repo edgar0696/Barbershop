@@ -1,5 +1,7 @@
 package edu.prj.barbershop.form;
 
+import java.time.LocalDate;
+
 public class ClientForm {
     private String id = "";
     private String name = "";

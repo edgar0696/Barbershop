@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Client</title>
     <link rel="stylesheet"
           type="text/css" href="<@spring.url '/css/style.css'/>"/>
 </head>
@@ -11,11 +11,15 @@
 
 <div>
     <fieldset>
-        <legend>Add Item</legend>
-        <form name="item" action="" method="POST">
+        <legend>Add Client</legend>
+        <form name="client" action="" method="POST">
             Name:<@spring.formInput "form.name" "" "text"/>
             <br>
-            Phone:<@spring.formInput "form.phone" "" "text"/>
+            Phone:<@spring.formInput "form.phone" "" "tel"/>
+            <br>
+            Adress:<@spring.formInput "form.adress" "" "text"/>
+            <br>
+            Birthday:<@spring.formInput "form.dateOfBirthday" "" "date"/>
             <br>
             Description:<@spring.formInput "form.description" "" "text"/>
             <br>
