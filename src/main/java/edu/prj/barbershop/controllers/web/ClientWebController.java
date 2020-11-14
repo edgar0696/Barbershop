@@ -67,7 +67,7 @@ public class ClientWebController {
         return "redirect:/web/client/list";
     }
 
-    @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
     public String update(@PathVariable("id") String id, Model model){
         Client client = service.get(id);
         ClientForm clientForm = new ClientForm();
@@ -86,7 +86,7 @@ public class ClientWebController {
         return "updateClient";
     }
 
-    @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
     public String update(@ModelAttribute("form") ClientForm form, @PathVariable("id") String id, Model model){
         Client client = service.get(id);
         client.setName(form.getName());

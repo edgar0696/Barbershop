@@ -70,4 +70,38 @@ public class CrudItemMongoImpl implements ICrudItem {
                 .collect(Collectors.toList());
         return sorted;
     }
+
+    public List<Item> getAllSortedById() {
+        List<Item> list = repository.findAll();
+        List<Item> sorted = list.stream()
+                .sorted(Comparator.comparing(Item::getId))
+                .collect(Collectors.toList());
+        return sorted;
+    }
+
+    public List<Item> getAllSortedByDescription() {
+        List<Item> list = repository.findAll();
+        List<Item> sorted = list.stream()
+                .sorted(Comparator.comparing(Item::getDescription))
+                .collect(Collectors.toList());
+        return sorted;
+    }
+
+    public List<Item> getAllSortedByCreated() {
+        List<Item> list = repository.findAll();
+        List<Item> sorted = list.stream()
+                .sorted(Comparator.comparing(Item::getCreated_at))
+                .collect(Collectors.toList());
+        return sorted;
+    }
+
+    public List<Item> getAllSortedByModified() {
+        List<Item> list = repository.findAll();
+        List<Item> sorted = list.stream()
+                .sorted(Comparator.comparing(Item::getModified_at))
+                .collect(Collectors.toList());
+        return sorted;
+    }
+
+
 }

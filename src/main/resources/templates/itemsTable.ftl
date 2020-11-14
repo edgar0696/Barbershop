@@ -18,11 +18,11 @@
     <table class="table table-dark">
         <thead>
         <tr>
-            <th>id</th>
-            <th><button class="btn btn-outline-warning" onclick="window.location.href = '/web/item/all/sort'">Name</button></th>
-            <th>description</th>
-            <th>created</th>
-            <th>modified</th>
+            <th><button class="btn btn-outline-warning" onclick="window.location.href = '/web/item/all/sort/id'">id</button></th>
+            <th><button class="btn btn-outline-warning" onclick="window.location.href = '/web/item/all/sort/name'">Name</button></th>
+            <th><button class="btn btn-outline-warning" onclick="window.location.href = '/web/item/all/sort/description'">description</button></th>
+            <th><button class="btn btn-outline-warning" onclick="window.location.href = '/web/item/all/sort/created'">created</button></th>
+            <th><button class="btn btn-outline-warning" onclick="window.location.href = '/web/item/all/sort/modified'">modified</button></th>
             <th>Delete</th>
             <th>Edit</th>
         </tr>
