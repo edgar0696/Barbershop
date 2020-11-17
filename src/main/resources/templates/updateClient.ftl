@@ -15,7 +15,7 @@
         <form name="client" action="" method="POST">
             Name:<@spring.formInput "form.name" "" "text"/>
             <br>
-            Gender:<@spring.formInput "form.gender" "" "text"/>
+            Gender:<@spring.formSingleSelect "form.gender", genders, ""/>
             <br>
             Phone:<@spring.formInput "form.phone" "" "tel"/>
             <br>

@@ -3,6 +3,7 @@ package edu.prj.barbershop.controllers.web;
 import edu.prj.barbershop.form.ClientForm;
 import edu.prj.barbershop.form.ItemForm;
 import edu.prj.barbershop.model.Client;
+import edu.prj.barbershop.model.Gender;
 import edu.prj.barbershop.model.Item;
 import edu.prj.barbershop.service.client.impls.CrudClientIServiseFakempl;
 import edu.prj.barbershop.service.client.impls.CrudClientServiceMongoImpl;
@@ -17,6 +18,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Controller
 @RequestMapping("web/client")
@@ -47,8 +53,11 @@ public class ClientWebController {
 
     @RequestMapping(value = "/create", method = RequestMethod.GET)
     public String create(Model model) {
+        List<String> genders = Stream.of(Gender.values()).map(Gender::name)
+                .collect(Collectors.toList());
         ClientForm clientForm = new ClientForm();
         model.addAttribute("form", clientForm);
+        model.addAttribute("genders", genders);
         return "ClientAddForm";
     }
 
@@ -76,6 +85,8 @@ public class ClientWebController {
         clientForm.setName(client.getName());
         clientForm.setAdress(client.getAdress());
         clientForm.setGender(client.getGender());
+        List<String> genders = new ArrayList<>(Arrays.asList("MALE","FEMALE","OTHER"));
+        model.addAttribute("genders", genders);
         clientForm.setPhone(client.getPhone());
         clientForm.setDateOfBirthday(client.getDateOfBirthday().toString());
         clientForm.setDescription(client.getDescription());

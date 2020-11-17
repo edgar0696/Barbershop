@@ -104,4 +104,8 @@ public class CrudItemMongoImpl implements ICrudItem {
     }
 
 
+    public Object getByName(String name) {
+        return this.getAll().stream().filter(item -> item.getName().contains(name))
+                .collect(Collectors.toList());
+    }
 }

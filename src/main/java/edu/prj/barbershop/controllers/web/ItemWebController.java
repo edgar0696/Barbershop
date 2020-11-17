@@ -2,16 +2,14 @@ package edu.prj.barbershop.controllers.web;
 
 import edu.prj.barbershop.data.FakeData;
 import edu.prj.barbershop.form.ItemForm;
+import edu.prj.barbershop.form.SearchForm;
 import edu.prj.barbershop.model.Item;
 import edu.prj.barbershop.service.item.impls.CrudItemMongoImpl;
 import edu.prj.barbershop.service.item.impls.ItemServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -28,6 +26,17 @@ public class ItemWebController {
     @RequestMapping("/all")
     String getAll(Model model) {
         model.addAttribute("items", service.getAll());
+        SearchForm search = new SearchForm();
+        model.addAttribute("search", search);
+        return "itemsTable";
+    }
+
+    @PostMapping("/all")
+    String getAll(@ModelAttribute("search")SearchForm form, Model model) {
+        String name = form.getName();
+        model.addAttribute("items", service.getByName(name));
+        SearchForm search = new SearchForm();
+        model.addAttribute("search", search);
         return "itemsTable";
     }
 

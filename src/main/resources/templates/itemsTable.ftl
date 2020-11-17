@@ -13,6 +13,15 @@
 <h3>Item List</h3>
 <a href="/index.html" class="btn btn-danger">BACK</a><br>
 
+<fieldset>
+    <legend>update Client</legend>
+    <form name="item" action="" method="POST">
+        Search:<@spring.formInput "search.name" "" "text"/>
+        <br>
+        <input type="submit" value="search"/>
+    </form>
+</fieldset>
+
 <br>
 <div>
     <table class="table table-dark">
