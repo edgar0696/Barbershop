@@ -4,7 +4,12 @@
 }
 
 body {
-    background: #A9A9A9	;
+    background-image: url("https://image.freepik.com/free-vector/vintage-barbershop-logo_1415-661.jpg");
+    background-size: 50%;
+    /*background-size: cover;*/
+    /*position: relative;*/
+    /*display: flex;*/
+    /*background: #A9A9A9	;*/
 }
 
 .header {

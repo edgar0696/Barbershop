@@ -58,6 +58,7 @@ public class ClientWebController {
         client.setName(form.getName());
         client.setDescription(form.getDescription());
         client.setPhone(form.getPhone());
+        client.setGender(form.getGender());
         client.setAdress(form.getAdress());
         String birthdayAsString = form.getDateOfBirthday();
         //    client.setDateOfBirthday(form.getDateOfBirthday());
@@ -74,6 +75,7 @@ public class ClientWebController {
         clientForm.setId(client.getId());
         clientForm.setName(client.getName());
         clientForm.setAdress(client.getAdress());
+        clientForm.setGender(client.getGender());
         clientForm.setPhone(client.getPhone());
         clientForm.setDateOfBirthday(client.getDateOfBirthday().toString());
         clientForm.setDescription(client.getDescription());
@@ -91,12 +93,13 @@ public class ClientWebController {
         Client client = service.get(id);
         client.setName(form.getName());
         client.setAdress(form.getAdress());
+        client.setGender(form.getGender());
         client.setPhone(form.getPhone());
         String birthdayAsString = form.getDateOfBirthday();
 //        client.setDateOfBirthday(clientForm.getDateOfBirthday());
         LocalDate birthdayAsDate = LocalDate.parse(birthdayAsString);
         client.setDateOfBirthday(birthdayAsDate);
-        client.setDescription(client.getDescription());
+        client.setDescription(form.getDescription());
         service.update(client);
         /*Client client = service.get(id);
         client.setName(form.getName());

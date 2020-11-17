@@ -5,21 +5,53 @@ import java.time.LocalDate;
 public class ClientForm {
     private String id = "";
     private String name = "";
+    private String gender = "";
     private String description = "";
     private String phone = "";
     private String adress = "";
     private String dateOfBirthday = "";
     private String created_at = "";
 
-    public ClientForm(String id, String name, String description, String phone, String adress, String dateOfBirthday, String created_at, String modified_at) {
+    public ClientForm() {
+    }
+
+    public ClientForm(String name, String gender, String description, String phone, String adress, String dateOfBirthday) {
+        this.name = name;
+        this.gender = gender;
+        this.description = description;
+        this.phone = phone;
+        this.adress = adress;
+        this.dateOfBirthday = dateOfBirthday;
+    }
+
+    public ClientForm(String id, String name, String gender, String description, String phone, String adress, String dateOfBirthday, String created_at, String modified_at) {
         this.id = id;
         this.name = name;
+        this.gender = gender;
         this.description = description;
         this.phone = phone;
         this.adress = adress;
         this.dateOfBirthday = dateOfBirthday;
         this.created_at = created_at;
         this.modified_at = modified_at;
+    }
+
+    public ClientForm(String id, String name, String gender, String description, String phone, String adress, String dateOfBirthday) {
+        this.id = id;
+        this.name = name;
+        this.gender = gender;
+        this.description = description;
+        this.phone = phone;
+        this.adress = adress;
+        this.dateOfBirthday = dateOfBirthday;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getDateOfBirthday() {
@@ -28,25 +60,6 @@ public class ClientForm {
 
     public void setDateOfBirthday(String dateOfBirthday) {
         this.dateOfBirthday = dateOfBirthday;
-    }
-
-    public ClientForm(String id, String name, String description, String phone, String created_at, String modified_at) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.phone = phone;
-        this.created_at = created_at;
-        this.modified_at = modified_at;
-    }
-
-    public ClientForm(String id, String name, String description, String phone, String adress, String created_at, String modified_at) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.phone = phone;
-        this.adress = adress;
-        this.created_at = created_at;
-        this.modified_at = modified_at;
     }
 
     public String getAdress() {
@@ -115,20 +128,5 @@ public class ClientForm {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public ClientForm(String name, String description) {
-        this.name = name;
-        this.description = description;
-    }
-
-    public ClientForm(String id, String name, String description) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-    }
-
-    public ClientForm() {
-    }
-
 
 }
