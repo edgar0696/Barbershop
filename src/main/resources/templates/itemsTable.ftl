@@ -14,15 +14,15 @@
 <a href="/index.html" class="btn btn-danger">BACK</a><br>
 
 <fieldset>
-    <legend>update Client</legend>
+    <legend></legend>
     <form name="item" action="" method="POST">
-        Search:<@spring.formInput "search.name" "" "text"/>
-        <br>
         <input type="submit" value="search"/>
+        <#--Search:--><@spring.formInput "search.name" "" "text"/>
     </form>
 </fieldset>
 
-<br>
+<button onclick="window.location.href = '/web/item/all'">Refresh</button>
+
 <div>
     <table class="table table-dark">
         <thead>

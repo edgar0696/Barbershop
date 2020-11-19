@@ -31,7 +31,7 @@ public class ItemWebController {
         return "itemsTable";
     }
 
-    @PostMapping("/all")
+    @RequestMapping(value = "/all",method = RequestMethod.POST)
     String getAll(@ModelAttribute("search")SearchForm form, Model model) {
         String name = form.getName();
         model.addAttribute("items", service.getByName(name));
@@ -95,30 +95,40 @@ public class ItemWebController {
     @RequestMapping(value = "/all/sort/name",method = RequestMethod.GET)
     public String sortedByName(Model model) {
         model.addAttribute("items", service.getAllSortedByName());
+        SearchForm search = new SearchForm();
+        model.addAttribute("search", search);
         return "itemsTable";
     }
 
     @RequestMapping(value ="/all/sort/id",method = RequestMethod.GET)
     public String sortedById(Model model) {
         model.addAttribute("items",service.getAllSortedById());
+        SearchForm search = new SearchForm();
+        model.addAttribute("search", search);
         return "itemsTable";
     }
 
     @RequestMapping(value ="/all/sort/description",method = RequestMethod.GET)
     public String sortedByDescription(Model model) {
         model.addAttribute("items",service.getAllSortedByDescription());
+        SearchForm search = new SearchForm();
+        model.addAttribute("search", search);
         return "itemsTable";
     }
 
     @RequestMapping(value ="/all/sort/created",method = RequestMethod.GET)
     public String sortedByCreated(Model model) {
         model.addAttribute("items",service.getAllSortedByCreated());
+        SearchForm search = new SearchForm();
+        model.addAttribute("search", search);
         return "itemsTable";
     }
 
     @RequestMapping(value ="/all/sort/modified",method = RequestMethod.GET)
     public String sortedByModified(Model model) {
         model.addAttribute("items",service.getAllSortedByModified());
+        SearchForm search = new SearchForm();
+        model.addAttribute("search", search);
         return "itemsTable";
     }
 }
