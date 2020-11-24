@@ -44,11 +44,11 @@ public class FakeData {
             new Record("1","record1","description1",LocalDateTime.now(),LocalDateTime.now(),
                     clients.get(0), haircuts.get(0), LocalDateTime.now(),LocalDateTime.now()),
             new Record("2","record2","description2",LocalDateTime.now(),LocalDateTime.now(),
-                    clients.get(0), haircuts.get(0), LocalDateTime.now(),LocalDateTime.now()),
+                    clients.get(1), haircuts.get(1), LocalDateTime.now(),LocalDateTime.now()),
             new Record("3","record3","description3",LocalDateTime.now(),LocalDateTime.now(),
-                    clients.get(0), haircuts.get(0), LocalDateTime.now(),LocalDateTime.now()),
+                    clients.get(2), haircuts.get(2), LocalDateTime.now(),LocalDateTime.now()),
             new Record("4","record4","description4",LocalDateTime.now(),LocalDateTime.now(),
-                    clients.get(0), haircuts.get(0), LocalDateTime.now(),LocalDateTime.now()))
+                    clients.get(3), haircuts.get(3), LocalDateTime.now(),LocalDateTime.now()))
             .collect(Collectors.toList());
 
     List<Item> items = Stream.of(
