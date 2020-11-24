@@ -62,6 +62,7 @@ public class FakeData {
 
     @PostConstruct
     void init(){
+        recordRepository.deleteAll();
         recordRepository.saveAll(records);
     }
 
