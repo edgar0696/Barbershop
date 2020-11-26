@@ -15,7 +15,8 @@
 
 
 
-<button onclick="window.location.href = '/web/item/all'">Refresh</button>
+<button onclick="window.location.href = '/web/record/list'">Refresh</button>
+<button onclick="window.location.href = '/web/record/renew'">Renew</button>
 
 <div>
     <table class="table table-dark">
@@ -56,7 +57,7 @@
 
 </div>
 
-<a href="/web/item/create" class="btn btn-success">Create</a>
+<a href="/web/record/create" class="btn btn-success">Create</a>
 
 
 </body>

@@ -42,6 +42,14 @@ public class Record {
         this.modified_at = modified_at;
     }
 
+    public Haircut getHaircut() {
+        return haircut;
+    }
+
+    public void setHaircut(Haircut haircut) {
+        this.haircut = haircut;
+    }
+
     public String getId() {
         return id;
     }
